@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+
+    android:weightSum="50"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:orientation="horizontal"
+        android:weightSum="20">
+
+        <Spinner
+            android:id="@+id/select_spinner"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            android:layout_weight="3" />
+
+        <android.widget.Button
+            android:onClick="SelectButton_onClick"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:autoSizeTextType="uniform"
+            android:text="검색"
+            android:textAlignment="center" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:weightSum="3"
+            android:orientation="horizontal">
+<!--            <Button-->
+<!--                android:onClick="TempButton_onClick"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"/>-->
+        </LinearLayout>
+        <TextView
+            android:id="@+id/totalText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            android:autoSizeTextType="uniform"
+            android:layout_weight="4"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="40"
+        android:orientation="vertical"
+        android:weightSum="20">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.5"
+            android:weightSum="13"
+            android:orientation="horizontal">
+
+            <android.widget.Button
+                android:onClick="month1Button_onClick"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                android:layout_margin="5dp"
+                android:text="1" />
+            <android.widget.Button
+                android:onClick="month2Button_onClick"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                android:layout_margin="5dp"
+                android:text="2" />
+            <android.widget.Button
+                android:onClick="month3Button_onClick"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                android:layout_margin="5dp"
+                android:text="3" />
+            <android.widget.Button
+                android:onClick="month4Button_onClick"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                android:layout_margin="5dp"
+                android:text="4" />
+            <android.widget.Button
+                android:onClick="month5Button_onClick"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                android:layout_margin="5dp"
+                android:text="5" />
+            <android.widget.Button
+                android:onClick="month6Button_onClick"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                android:layout_margin="5dp"
+                android:text="6" />
+            <android.widget.Button
+                android:onClick="month7Button_onClick"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                android:layout_margin="5dp"
+                android:text="7" />
+            <android.widget.Button
+                android:onClick="month8Button_onClick"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                android:layout_margin="5dp"
+                android:text="8" />
+            <android.widget.Button
+                android:onClick="month9Button_onClick"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                android:layout_margin="5dp"
+                android:text="9" />
+            <android.widget.Button
+                android:onClick="month10Button_onClick"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                android:layout_margin="5dp"
+                android:text="10" />
+            <android.widget.Button
+                android:onClick="month11Button_onClick"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                android:layout_margin="5dp"
+                android:text="11" />
+            <android.widget.Button
+                android:onClick="month12Button_onClick"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                android:layout_margin="5dp"
+                android:text="12" />
+            <android.widget.Button
+                android:onClick="monthAllButton_onClick"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                android:layout_margin="5dp"
+                android:text="A" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/recordListView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="17.5"
+            android:background="@drawable/border"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:orientation="horizontal"
+        android:weightSum="20">
+
+        <Spinner
+            android:id="@+id/year_spinner"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+
+            android:textAlignment="center" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:text="년"
+            android:textAlignment="center" />
+
+        <Spinner
+            android:id="@+id/month_spinner"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:textAlignment="center" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:text="월"
+            android:textAlignment="center" />
+
+        <Spinner
+            android:id="@+id/day_spinner"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:textAlignment="center" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:text="일"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/addMoneyText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:textSize="20sp"
+            android:hint="금액을 입력해주세요."
+            android:inputType="number"
+            android:textAlignment="center" />
+
+        <android.widget.Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:onClick="InsertButton_onClick"
+            android:text="추가"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <android.widget.Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:onClick="DeleteButton_onClick"
+            android:text="삭제"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+
+</LinearLayout>

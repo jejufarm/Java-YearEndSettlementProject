@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="20">
+    <TextView
+        android:id="@+id/uidText"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text="uid"
+        android:textSize="27.5sp"/>
+
+    <TextView
+        android:id="@+id/yearText"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="27.5sp"
+        android:text="year" />
+    <TextView
+        android:id="@+id/monthText"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="27.5sp"
+        android:text="month" />
+    <TextView
+        android:id="@+id/dayText"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="27.5sp"
+        android:text="day" />
+    <TextView
+        android:id="@+id/moneyText"
+        android:layout_width="0dp"
+        android:layout_weight="8"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="27.5sp"
+        android:text="money" />
+
+
+</LinearLayout>
