@@ -120,8 +120,8 @@ public class MainActivity extends AppCompatActivity {
         totalText = findViewById(R.id.totalText);
         init_RecordListView();
         select_spinner.setSelection(select_spinner_list.size() - 1);
-        GetDataAll();
         setPermission();
+        GetListView(current_time.year, current_time.month + 1);
     }
 
     private void init_RecordListView() {
@@ -248,7 +248,7 @@ public class MainActivity extends AppCompatActivity {
         year_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                  int temp = set_Day_Spinner(Integer.parseInt(year_spinner.getSelectedItem().toString()), Integer.parseInt(month_spinner.getSelectedItem().toString()));
+                int temp = set_Day_Spinner(Integer.parseInt(year_spinner.getSelectedItem().toString()), Integer.parseInt(month_spinner.getSelectedItem().toString()));
 
                 day_spinner_list.clear();
                 for (int i = 1; i <= temp; i++) {
@@ -368,6 +368,8 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
             SQLiteService.GetSQLite().InsertData(new RecordForm(0, year, month, day, money));
+            GetListView(year, month);
+            recordListView.setSelection(recordListViewAdapter.getCount() - 1);
             addMoneyText.setText("");
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -394,8 +396,6 @@ public class MainActivity extends AppCompatActivity {
             dst.close();
             Toast.makeText(getApplicationContext(), "Backup Successful!",
                     Toast.LENGTH_SHORT).show();
-
-
         } catch (Exception e) {
 
             Toast.makeText(getApplicationContext(), "Backup Failed!", Toast.LENGTH_SHORT)
@@ -415,7 +415,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         try {
                             SQLiteService.GetSQLite().DeleteData(selected_item.getUid());
-                            GetDataAll();
+                            GetListView(selected_item.getYear(),selected_item.getMonth());
                             selected_item = null;
                         } catch (Exception ex) {
                             ex.printStackTrace();
@@ -439,12 +439,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void month2Button_onClick(View view) {
         GetListView(2);
-
     }
 
     public void month3Button_onClick(View view) {
         GetListView(3);
-
     }
 
     public void month4Button_onClick(View view) {
@@ -493,6 +491,23 @@ public class MainActivity extends AppCompatActivity {
             long total = 0;
             DecimalFormat df = new DecimalFormat("#,###");
             ArrayList<RecordForm> temp = SQLiteService.GetSQLite().GetData(Integer.parseInt(select_spinner.getSelectedItem().toString()), month);
+            recordListViewAdapter.clear();
+            for (RecordForm item : temp) {
+                total += item.getMoney();
+                recordListViewAdapter.append(item);
+            }
+            totalText.setText(df.format(total));
+            selected_item = null;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private void GetListView(int year, int month) {
+        try {
+            long total = 0;
+            DecimalFormat df = new DecimalFormat("#,###");
+            ArrayList<RecordForm> temp = SQLiteService.GetSQLite().GetData(year, month);
             recordListViewAdapter.clear();
             for (RecordForm item : temp) {
                 total += item.getMoney();
