@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
     //region spinner
 
     private int set_Day_Spinner(int year, int month) {
-        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+        if (month == 2 && (year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
             if (month == 2)
                 return 29;
             else
